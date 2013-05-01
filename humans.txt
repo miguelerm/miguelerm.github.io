@@ -3,7 +3,7 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Miguel Roman -- developer -- @miguelerm
 
 # THANKS
 
@@ -13,3 +13,4 @@
 
     HTML5, CSS3
     Normalize.css, jQuery, Modernizr
+    jekyll, markdown, less
