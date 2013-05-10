@@ -10,7 +10,9 @@
       <meta name="description" content="Sitio personal de Mike">
       <meta name="viewport" content="width=device-width">
 
-      <link rel='stylesheet' type='text/css' href='/bundles/5d4a6c5220e9ec27d33bd5eada60a963.css' />
+      <link rel='stylesheet' type='text/css' href='/bundles/93151233d3df3c58e62f41bc536a28c7.css' />
+
+      <link rel='stylesheet' type='text/css' href='/bundles/6fb678c29cd4e61803bf0117778021c8.css' />
 
 
       <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
@@ -21,13 +23,13 @@
       <![endif]-->
 
       <header>
-         <hgroup class="container">
+         <div class="container">
             <h1>Sitio Personal de Mike</h1>
-         </hgroup>
-      </header>
+         </div>
          <nav class="navbar navbar-fixed-top navbar-invert">
             <div class="navbar-inner">
                <div class="container">
+                  <a class="brand" href="/">Miguel Rom&aacute;n</a>
                   <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                      <span class="icon-bar"></span>
                      <span class="icon-bar"></span>
@@ -43,6 +45,7 @@
                </div>
             </div>
          </nav>
+      </header>
       
       
       <section class="container">
@@ -52,12 +55,18 @@
   <li>
   	<span>22 Apr 2013</span> &raquo; 
   	<a href='/posts/2013/04/22/maestro-detalle-aspnet-mvc4.html' title='Maestro detalle en ASP.Net MVC 4'>Maestro detalle en ASP.Net MVC 4</a> 
-  	(<a class='livefyre-commentcount' data-lf-article-id='http://miguelerm.github.io/posts/2013/04/22/maestro-detalle-aspnet-mvc4.html' data-lf-site-id='332170' href='/posts/2013/04/22/maestro-detalle-aspnet-mvc4.html#comments' title='comentarios del post Maestro detalle en ASP.Net MVC 4'>
-0 Comments
-</a>)
+  	(<a data-disqus-identifier='disqus/posts/2013/04/22/maestro-detalle-aspnet-mvc4' href='http://miguelerm.github.io/posts/2013/04/22/maestro-detalle-aspnet-mvc4.html#disqus_thread' title='comentarios en &apos;Maestro detalle en ASP.Net MVC 4&apos;'>comentarios</a>)
   </li>
 
-</ul><script src='http://zor.livefyre.com/wjs/v1.0/javascripts/CommentCount.js' type='text/javascript'>
+</ul><script>
+    if (window.location.hostname != 'localhost') {
+      var disqus_shortname = 'miguelerm';
+
+      (function () {
+          var s = document.createElement('script'); s.async = true; s.type = 'text/javascript'; s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+      }());
+    }
 </script>
 	   </section>
 	   
@@ -65,8 +74,11 @@
 	      <p>&copy; <a title="Mike en Google+" href="http://profiles.google.com/miguelerm" >Miguel Rom&aacute;n</a>  | Todos los derechos reservados.</p>
 	   </footer>
 
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-      <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+      <script>
+      var jqueryRemote = function () {  window.location.hostname != 'localhost' && document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"><\/script>'); return window.jQuery; };
+      var jqueryLocals = function () { document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>'); };
+      jqueryRemote() || jqueryLocals();
+      </script>
       <script type='text/javascript' src='/bundles/919ba8a51b510b50b89718f3345bda75.js'></script>
 
 

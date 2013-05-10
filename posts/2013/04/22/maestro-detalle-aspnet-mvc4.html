@@ -10,7 +10,9 @@
       <meta name="description" content="Sitio personal de Mike">
       <meta name="viewport" content="width=device-width">
 
-      <link rel='stylesheet' type='text/css' href='/bundles/5d4a6c5220e9ec27d33bd5eada60a963.css' />
+      <link rel='stylesheet' type='text/css' href='/bundles/93151233d3df3c58e62f41bc536a28c7.css' />
+
+      <link rel='stylesheet' type='text/css' href='/bundles/6fb678c29cd4e61803bf0117778021c8.css' />
 
 
       <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
@@ -21,13 +23,13 @@
       <![endif]-->
 
       <header>
-         <hgroup class="container">
+         <div class="container">
             <h1>Sitio Personal de Mike</h1>
-         </hgroup>
-      </header>
+         </div>
          <nav class="navbar navbar-fixed-top navbar-invert">
             <div class="navbar-inner">
                <div class="container">
+                  <a class="brand" href="/">Miguel Rom&aacute;n</a>
                   <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                      <span class="icon-bar"></span>
                      <span class="icon-bar"></span>
@@ -43,13 +45,14 @@
                </div>
             </div>
          </nav>
+      </header>
       
       
       <section class="container">
 	      <article>
 	<header>
 		<h1>Maestro detalle en ASP.Net MVC 4</h1>
-		<time datetime="2013-04-22 12:46:00 -0600">2013-04-22 12:46:00 -0600<time>
+		<time datetime="2013-04-22 12:46:00 -0600">2013-04-22 12:46:00 -0600</time>
 	</header>
 
 	<p>En el desarrollo de aplicaciones, a menudo nos vemos en la necesidad de trabajar con estructuras en las que se solicitan colecciones de elementos (algo como un maestro detalle). El ejemplo típico es con una &#8220;Factura&#8221; o una &#8220;Orden de compra&#8221;, en la que se cuenta con un encabezado (maestro) de la Factura que contiene número, fecha, datos del cliente, etc. y el detalle de la factura contiene <em>n</em> elementos que corresponden a los datos del producto: cantidad, precio, sub-total, etc.</p>
@@ -327,27 +330,26 @@
 
 <hr />
 
-<section id="comments" class="comments">
-    <!-- START: Livefyre Embed -->
-    <div id="livefyre-comments"></div>
-    <script type="text/javascript" src="http://zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
+<section class="comments">
+    <div id="disqus_thread"></div>
     <script type="text/javascript">
-    (function () {
-        var articleId = fyre.conv.load.makeArticleId(null);
-        fyre.conv.load({}, [{
-            el: 'livefyre-comments',
-            network: "livefyre.com",
-            siteId: "332170",
-            articleId: articleId,
-            signed: false,
-            collectionMeta: {
-                articleId: articleId,
-                url: fyre.conv.load.makeCollectionUrl(),
-            }
-        }], function() {});
-    }());
+        if (window.location.hostname != 'localhost') {
+
+            var disqus_shortname = 'miguelerm';
+            var disqus_title = 'Maestro detalle en ASP.Net MVC 4';
+            var disqus_identifier = 'disqus/posts/2013/04/22/maestro-detalle-aspnet-mvc4';
+            var disqus_url = 'http://miguelerm.github.io/posts/2013/04/22/maestro-detalle-aspnet-mvc4.html';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+
+        }
     </script>
-    <!-- END: Livefyre Embed -->
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </section>
 	   </section>
 	   
@@ -355,8 +357,11 @@
 	      <p>&copy; <a title="Mike en Google+" href="http://profiles.google.com/miguelerm" >Miguel Rom&aacute;n</a>  | Todos los derechos reservados.</p>
 	   </footer>
 
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-      <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+      <script>
+      var jqueryRemote = function () {  window.location.hostname != 'localhost' && document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"><\/script>'); return window.jQuery; };
+      var jqueryLocals = function () { document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>'); };
+      jqueryRemote() || jqueryLocals();
+      </script>
       <script type='text/javascript' src='/bundles/919ba8a51b510b50b89718f3345bda75.js'></script>
 
 
