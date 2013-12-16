@@ -1,93 +1,18 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="es"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="es"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang="es"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="es"> <!--<![endif]-->
-   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title> Blog |  mike-devel</title>
-      <meta name="description" content="Sitio personal de Mike">
-      <meta name="viewport" content="width=device-width">
+---
+layout: default
+title: Your New Jekyll Site
+---
 
-      <link rel='stylesheet' type='text/css' href='/bundles/93151233d3df3c58e62f41bc536a28c7.css' />
+<div class="jumbotron">
+    <h1>Sitio personal de Mike</h1>
+    <p>Hola! este es un sitio/blog en el que publico notas en forma de tutoriales de problemas o tecnologias interesantes con las que me voy encontrando durante el desarrollo de mi trabajo. </p>
+</div>
 
-      <link rel='stylesheet' type='text/css' href='/bundles/6fb678c29cd4e61803bf0117778021c8.css' />
-
-
-      <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
-   </head>
-   <body>
-      <!--[if lt IE 7]>
-         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-      <![endif]-->
-
-      <header>
-         <div class="container">
-            <h1>Sitio Personal de Mike</h1>
-         </div>
-         <nav class="navbar navbar-fixed-top navbar-invert">
-            <div class="navbar-inner">
-               <div class="container">
-                  <a class="brand" href="/">Miguel Rom&aacute;n</a>
-                  <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                     <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
-                  </button>                  
-                  <div class="nav-collapse collapse">
-                     <ul class="nav">
-                        <li class="active"><a href="/">Blog</a></li>
-                        <li><a href="/about.html">Yo mero</a></li>
-                        <li><a href="/contact.html">Contacto</a></li>
-                     </ul>
-                  </div><!--/.nav-collapse -->
-               </div>
-            </div>
-         </nav>
-      </header>
-      
-      
-      <section class="container">
-	      <h2 id='blog_posts'>Blog Posts</h2>
-<ul class='posts'>
-
-  <li>
-  	<span>22 Apr 2013</span> &raquo; 
-  	<a href='/posts/2013/04/22/maestro-detalle-aspnet-mvc4.html' title='Maestro detalle en ASP.Net MVC 4'>Maestro detalle en ASP.Net MVC 4</a> 
-  	(<a data-disqus-identifier='disqus/posts/2013/04/22/maestro-detalle-aspnet-mvc4' href='http://miguelerm.github.io/posts/2013/04/22/maestro-detalle-aspnet-mvc4.html#disqus_thread' title='comentarios en &apos;Maestro detalle en ASP.Net MVC 4&apos;'>comentarios</a>)
-  </li>
-
-</ul><script>
-    if (window.location.hostname != 'localhost') {
-      var disqus_shortname = 'miguelerm';
-
-      (function () {
-          var s = document.createElement('script'); s.async = true; s.type = 'text/javascript'; s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-      }());
-    }
-</script>
-	   </section>
-	   
-	   <footer class="container">
-	      <p>&copy; <a title="Mike en Google+" href="http://profiles.google.com/miguelerm" >Miguel Rom&aacute;n</a>  | Todos los derechos reservados.</p>
-	   </footer>
-
-      <script>
-      var jqueryRemote = function () {  window.location.hostname != 'localhost' && document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"><\/script>'); return window.jQuery; };
-      var jqueryLocals = function () { document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>'); };
-      jqueryRemote() || jqueryLocals();
-      </script>
-      <script type='text/javascript' src='/bundles/919ba8a51b510b50b89718f3345bda75.js'></script>
-
-
-      <script>
-         var _gaq=[['_setAccount','UA-40921433-1'],['_trackPageview']];
-         (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-         g.src='//www.google-analytics.com/ga.js';
-         s.parentNode.insertBefore(g,s)}(document,'script'));
-      </script>
-   
-   </body>
-</html>
+<div id="home">
+  <h1>Blog Posts</h1>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>

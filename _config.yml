@@ -1,0 +1,5 @@
+name: Mike's Blog
+markdown: redcarpet
+pygments: true
+safe: true
+exclude: ['node_modules', 'bootstrap', 'jquery']
