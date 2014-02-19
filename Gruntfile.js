@@ -15,10 +15,23 @@ module.exports = function(grunt) {
 				' *\n' +
 				' * Designed and built with all the love in the world by @mdo and @fat.\n' +
 				' */\n\n',
+        jqueryBanner: '/*!\n' +
+                ' * jQuery JavaScript Library v1.10.2\n' +
+                ' * http://jquery.com/\n' +
+                ' *\n' +
+                ' * Includes Sizzle.js\n' +
+                ' * http://sizzlejs.com/\n' +
+                ' *\n' +
+                ' * Copyright 2005, 2013 jQuery Foundation, Inc. and other contributors\n' +
+                ' * Released under the MIT license\n' +
+                ' * http://jquery.org/license\n' +
+                ' *\n' +
+                ' * Date: 2013-07-03T13:48Z\n' +
+                ' */\n\n',
 		jQueryCheck: 'if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery") }\n\n',
 		concat: {
 			options: {
-				banner: '<%= banner %><%= bootstrapBanner %>',
+				banner: '<%= banner %><%= jqueryBanner %><%= bootstrapBanner %>',
 				stripBanners: false
 			},
 			build: {
@@ -35,14 +48,15 @@ module.exports = function(grunt) {
 					'js/bootstrap/popover.js',
 					'js/bootstrap/scrollspy.js',
 					'js/bootstrap/tab.js',
-					'js/bootstrap/affix.js'
+					'js/bootstrap/affix.js',
+                    'js/main.js'
 				],
 				dest: 'js/main-build.js'
 			}
 		},
 		uglify: {
 			options: {
-				banner: '<%= banner %><%= bootstrapBanner %>',
+				banner: '<%= banner %><%= jqueryBanner %><%= bootstrapBanner %>',
 				report: 'min'
 			},
 			build: {
