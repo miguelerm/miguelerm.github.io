@@ -366,7 +366,7 @@ Pero no se preocupen en el siguiente POST ya vamos a involucrar un poco a nuestr
 
 Espero que les sea de utilidad esta información y nos vemos en el próximo artículo donde hablaremos un poco mas de este tema.
 
-Saludos y hasta la próxima, <a title="Mike en Google+" rel="author" href="http://profiles.google.com/miguelerm?rel=author">Mike</a>.
+Saludos y hasta la próxima, <a title="Mike en Google+" rel="author" href="https://plus.google.com/+MiguelEduardoRomanMartinez?rel=author">Mike</a>.
 
 [1]: http://www.asp.net/mvc "Sitio oficial de Asp.Net Mvc"
 [2]: http://es.wikipedia.org/wiki/JavaScript "JavaScript en Wikipedia"
