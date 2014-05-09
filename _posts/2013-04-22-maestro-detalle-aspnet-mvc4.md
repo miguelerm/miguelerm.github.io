@@ -92,7 +92,7 @@ La representación de estas entidades en nuestro modelo relacional de base de da
 
 Trabajemos en nuestro controlador:
 
-Basicamente lo que hacemos en el `Action Create`  es solicitar un parámetro `accion` que nos va a indicar si hay que eliminar un detalle en base a su indice (`eliminar-detalle-idx`), agregar uno nuevo (`agregar-detalle`) o si viene `null` es porque hay que intentar crear la factura con la información indicada.
+Basicamente lo que hacemos en el `Action Create`  es solicitar un parámetro `accion` que nos va a indicar si hay que eliminar un detalle con base a su indice (`eliminar-detalle-idx`), agregar uno nuevo (`agregar-detalle`) o si viene `null` es porque hay que intentar crear la factura con la información indicada.
 
 > **Nota:** en `eliminar-detalle-idx` el `idx` es el indice o posición del detalle que se quiere eliminar por ejemplo si queremos eliminar el tercer detalle de la lista, como `accion` se enviará `eliminar-detalle-2`.
 
@@ -366,7 +366,7 @@ Pero no se preocupen en el siguiente POST ya vamos a involucrar un poco a nuestr
 
 Espero que les sea de utilidad esta información y nos vemos en el próximo artículo donde hablaremos un poco mas de este tema.
 
-Saludos y hasta la próxima, <a title="Mike en Google+" rel="author" href="https://plus.google.com/+MiguelEduardoRomanMartinez?rel=author">Mike</a>.
+Saludos y hasta la próxima.
 
 [1]: http://www.asp.net/mvc "Sitio oficial de Asp.Net Mvc"
 [2]: http://es.wikipedia.org/wiki/JavaScript "JavaScript en Wikipedia"

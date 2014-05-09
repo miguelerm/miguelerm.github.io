@@ -2,14 +2,16 @@
 layout: default
 ---
 
-<article>
+<article class="blog-post">
     <header>
-        <h2>{{ page.title }}</h2>
-        <p><time datetime="{{ page.date }}">{{ page.date | date_to_string }}</time></p>
+        <h2 class="blog-post-title">{{ page.title }}</h2>
+        <p class="blog-post-meta"><time datetime="{{ page.date }}">{{ page.date | date_to_string }}</time> por <a title="Mike en Google+" rel="author" href="http://plus.google.com/105939516164475271818?rel=author">Mike</a></p>
     </header>
 
     <div class="post">
+
         {{ content }}
+    
     </div>
 
 </article>

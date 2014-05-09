@@ -1,11 +1,9 @@
 ---
-
 layout: post
 title:  "Introducción a la programación web I"
-date:   2014-07-07 08:48
+date:   2014-04-07 08:48
 categories : posts
 summary: "Hangout en el que hablamos un poco de Http y Html"
-
 ---
 
 Hace algunos días unos amigos me solicitaron que los orientara un poco con respecto a la programación web. Por este motivo decidimos elaborar una serie de Hangouts (1 a la semana) en las que trataremos de explicar desde conceptos básicos de programación web, hasta llegar a desarrollar aplicaciones y buenas practicas de desarrollo.

@@ -1,11 +1,9 @@
 ---
-
 layout: post
 title:  "Introducción a la programación web II"
-date:   2014-07-07 08:48
+date:   2014-04-07 08:48
 categories : posts
 summary: "Hangout en el que hablamos un poco de JavaScript y CSS"
-
 ---
 
 Continuando con la serie de Hangouts, en los que pretendo ir ilustrando algunos temas básicos acerca de la programación web, el pasado sábado grabamos el segundo Hangout en el que hablamos acerca de:
