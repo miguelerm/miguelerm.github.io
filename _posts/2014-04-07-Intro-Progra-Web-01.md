@@ -33,8 +33,6 @@ Los dejo con la grabación de la charla.
 
 Hasta la próxima.
 
-<a title="Mike en Google+" rel="author" href="https://plus.google.com/+MiguelEduardoRomanMartinez?rel=author">Mike</a>.
-
 
 [1]: http://www.telerik.com/fiddler
 [2]: http://brackets.io/
