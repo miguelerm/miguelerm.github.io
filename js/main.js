@@ -8,4 +8,8 @@
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }
+
+    // css en tablas
+    $('article.blog-post table').addClass('table').addClass('table-bordered').addClass('table-striped');
+    
 })(window, document, disqus_shortname, remote_hostname, disqus_enabled);
