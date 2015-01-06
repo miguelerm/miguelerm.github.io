@@ -3,6 +3,7 @@ layout: post
 title:  "Nuestra primer App con HTML5 y Javascript"
 date:   2014-05-08 08:48
 categories : posts
+author: "Miguel Román"
 summary: "Hangout en el que hablamos un poco de JavaScript y HTML"
 ---
 

@@ -3,6 +3,7 @@ layout: post
 title:  "Introducción a la programación web II"
 date:   2014-04-07 08:48
 categories : posts
+author: "Miguel Román"
 summary: "Hangout en el que hablamos un poco de JavaScript y CSS"
 ---
 

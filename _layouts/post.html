@@ -2,19 +2,69 @@
 layout: default
 ---
 
-<article class="blog-post">
-    <header>
-        <h2 class="blog-post-title">{{ page.title }}</h2>
-        <p class="blog-post-meta"><time datetime="{{ page.date }}">{{ page.date | date_to_string }}</time> por <a title="Mike en Google+" rel="author" href="http://plus.google.com/105939516164475271818?rel=author">Mike</a></p>
-    </header>
-
-    <div class="post">
-
-        {{ content }}
-    
+<!-- Post Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>{{ page.title }}</h1>
+                    {% if page.subtitle %}
+                    <h2 class="subheading">{{ page.subtitle }}</h2>
+                    {% endif %}
+                    <span class="meta">Publicado por <a title="{{ page.author }} en Google+" rel="author" href="http://plus.google.com/105939516164475271818?rel=author">{{ page.author }}</a> el <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d" }} de 
+{% assign m = page.date | date: "%-m" %}
+{% case m %}
+  {% when '1' %}enero
+  {% when '2' %}febrero
+  {% when '3' %}marzo
+  {% when '4' %}abril
+  {% when '5' %}mayo
+  {% when '6' %}junio
+  {% when '7' %}julio
+  {% when '8' %}agosto
+  {% when '9' %}septiembre
+  {% when '10' %}octubre
+  {% when '11' %}noviembre
+  {% when '12' %}diciembre
+{% endcase %}
+de {{ page.date | date: "%Y" }}</time></span>
+                </div>
+            </div>
+        </div>
     </div>
+</header>
 
+<!-- Post Content -->
+<article class="blog-post">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				{{ content }}
+
+                <hr>
+
+                <ul class="pager">
+                    {% if page.previous.url %}
+                    <li class="previous">
+                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; Post Anterior</a>
+                    </li>
+                    {% endif %}
+                    {% if page.next.url %}
+                    <li class="next">
+                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Post Siguiente &rarr;</a>
+                    </li>
+                    {% endif %}
+                </ul>
+
+            </div>
+        </div>
+    </div>
 </article>
+
+<hr>
+
 <div id="disqus_thread"></div>
 <noscript>
     Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>

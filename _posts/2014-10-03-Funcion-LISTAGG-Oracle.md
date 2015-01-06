@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "Funcion LISTAGG de Oracle"
-date:   2013-04-22 12:46
+date:   2014-10-03 12:46
 categories : posts
+author: "Miguel Román"
 summary: "Ejemplo de uso de la función LISTAGG de Oracle, utilizada para concatenar registros separados por comas."
 ---
 
@@ -29,8 +30,7 @@ Y la tabla FacturasDetalle con lo siguiente:
 
 Y que queremos mostrar los datos de la factura, con el total a pagar pero solo el nombre de los ítems separados por coma:
 
-```sql
-
+~~~sql
 SELECT 
     FACTURA, 
     FECHA, 
@@ -40,8 +40,7 @@ SELECT
 FROM 
     FACTURAS 
     INNER JOIN FACTURASDETALLE USING (FACTURA);
-
-```
+~~~
 
 Entonces el resultado del query sería algo como esto:
 
@@ -53,10 +52,9 @@ Entonces el resultado del query sería algo como esto:
 
 > **Nota:** no sé si las sumas están bien, pero la idea es esa. Jejeje
 
-PD.: El JOIN también se puede hacer con esta sintaxis que creo que es la que más utilizan por algunos oraclers, jejeje
+PD.: El JOIN también se puede hacer con esta sintaxis que creo que es la que más utilizan algunos oraclers, jejeje
 
-```sql
-
+~~~ sql
 SELECT 
     FACTURAS.FACTURA, 
     FECHA, 
@@ -68,7 +66,6 @@ FROM
     FACTURASDETALLE
     WHERE
     FACTURAS.FACTURA = FACTURASDETALLE.FACTURA;
-
-```
+~~~
 
 Saludos y hasta la próxima.

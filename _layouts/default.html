@@ -1,96 +1,16 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width" />
+<html lang="en">
 
-        <meta name="author" content="Miguel Roman">
+{% include head.html %}
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/desktop-style.min.css?v=1" />
+<body>
 
-        <link rel="me" type="text/html" href="http://plus.google.com/105939516164475271818?rel=me"/> 
-        <link rel="me" type="text/html" href="http://twitter.com/miguelerm"/> 
-        <link rel="me" type="text/html" href="http://facebook.com/miguelerm"/> 
-        <link rel="me" type="text/html" href="http://coderbits.com/miguelerm"/> 
+    {% include nav.html %}
 
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-    </head>
-    <body>
+    {{ content }}
 
-        <div class="blog-masthead">
-          <div class="container">
-            <nav class="blog-nav">
-              <a class="blog-nav-item active" href="/">Inicio</a>
-            </nav>
-          </div>
-        </div>
+    {% include footer.html %}
 
-        <div class="container">
+</body>
 
-            <div class="blog-header">
-                <h1 class="blog-title">El blog de el Mike</h1>
-                <p class="lead blog-description">Un lugar para colocar mis notas de programaci&oacute;n.</p>
-            </div>
-
-            <div class="row">
-
-                <div class="col-sm-8 blog-main">
-
-                    {{ content }}
-
-                </div><!-- /.blog-main -->
-
-                <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-                  <div class="sidebar-module sidebar-module-inset" itemscope itemtype="http://data-vocabulary.org/Person">
-                    <h4>Acerca de mi</h4>
-                    <p>Mi nombre es <a title="Mike en Google+" rel="author" href="http://plus.google.com/105939516164475271818?rel=author" itemprop="name" target="_blank">Miguel Rom&aacute;n</a>, pero la gente me dice "el <span itemprop="nickname">Mike</span>".</p>
-                    <p>Esta es mi p&aacute;gina web: <a href="http://miguelerm.github.io" itemprop="url">miguelerm.github.io</a>.</p>
-                    <p>Vivo en  <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address"><span itemprop="locality">Guatemala</span></span> y trabajo como <span itemprop="title">Arquitecto de Software</span> en el <a href="http://www.minfin.gob.gt/" itemprop="affiliation" title="Ministerio de Finanzas P&uacute;blicas" target="_blank">Minfin</span>.
-                  </div>
-                  <div class="sidebar-module">
-                    <h4>Tambien estoy en</h4>
-                    <ol class="list-unstyled">
-                      <li><a href="http://github.com/miguelerm" target="_blank">GitHub</a></li>
-                      <li><a href="http://coderbits.com/miguelerm" target="_blank">Coderbits</a></li>
-                      <li><a href="http://twitter.com/miguelerm" target="_blank">Twitter</a></li>
-                      <li><a href="http://facebook.com/miguelerm" target="_blank">Facebook</a></li>
-                    </ol>
-                  </div>
-                </div><!-- /.blog-sidebar -->
-
-            </div><!-- /.row -->
-
-        </div><!-- /.container -->
-
-        <div class="blog-footer">
-            <p>&copy; Derechos reservados 2014, <a href="http://miguelerm.github.io">Miguel Rom&aacute;n</a>.</p>
-            <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-        </div>
-
-        <script type="text/javascript">
-            var remote_hostname = 'miguelerm.github.io';
-            var disqus_shortname = 'miguelerm';
-            var disqus_identifier = '{{ page.url }}';
-            var disqus_url = 'http://' + remote_hostname + '{{ page.url }}';
-            var disqus_enabled = disqus_enabled || false;
-        </script>
-        <script src="/js/main-build.min.js"></script>
-        <script>
-            if (window.location.hostname === remote_hostname) {
-                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-                ga('create', 'UA-40921433-1', 'miguelerm.github.io');
-                ga('send', 'pageview');
-            }
-        </script>
-    </body>
 </html>

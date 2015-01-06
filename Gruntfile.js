@@ -49,6 +49,8 @@ module.exports = function(grunt) {
 					'js/bootstrap/scrollspy.js',
 					'js/bootstrap/tab.js',
 					'js/bootstrap/affix.js',
+					'js/jqBootstrapValidation.js',
+					'js/clean-blog.js',
                     'js/main.js'
 				],
 				dest: 'js/main-build.js'
@@ -64,17 +66,15 @@ module.exports = function(grunt) {
 				dest: 'js/main-build.min.js'
 			}
 		},
-		recess: {
+		less: {
 			options: {
-				compile: true,
-				banner: '<%= banner %><%= bootstrapBanner %>'
+				compress: true,
+				cleancss: true
 			},
-			build: {
-				options: {
-					compress: true
-				},
-				src: ['css/desktop-style.less'],
-				dest: 'css/desktop-style.min.css'
+			src: { 
+				expand: true, 
+				src: 'css/desktop-style.less', 
+				ext: '.min.css'
 			}
 		},
 		jekyll: {
@@ -83,13 +83,12 @@ module.exports = function(grunt) {
 	});
 	
 	// Load the plugin that provides the necessary task.
+	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-jekyll');
-	grunt.loadNpmTasks('grunt-recess');
-	
+	grunt.loadNpmTasks('grunt-jekyll');	
 	
 	// Default task(s).
-	grunt.registerTask('default', ['concat', 'uglify', 'recess', 'jekyll']);
+	grunt.registerTask('default', ['concat', 'uglify', 'less', 'jekyll']);
 
 };

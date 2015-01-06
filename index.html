@@ -1,15 +1,54 @@
 ---
-layout: default
+layout: page
 title: Blog de Mike
+description: Otro blog con artículos acerca de desarrollo web
 ---
 
-<p>Hola! este es un sitio/blog en el que publico notas en forma de tutoriales de problemas o tecnologias interesantes con las que me voy encontrando durante el desarrollo de mi trabajo.</p>
+{% for post in paginator.posts %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">{{ post.title }}</h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+        {% endif %}
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+    </a>
+    {% if post.summary %}
+    <p class="post-summary">{{ post.summary | markdownify }}</p>
+    {% endif %}
+    <p class="post-meta">Publicado por {{ post.author }} el <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d" }} de 
+{% assign m = post.date | date: "%-m" %}
+{% case m %}
+  {% when '1' %}enero
+  {% when '2' %}febrero
+  {% when '3' %}marzo
+  {% when '4' %}abril
+  {% when '5' %}mayo
+  {% when '6' %}junio
+  {% when '7' %}julio
+  {% when '8' %}agosto
+  {% when '9' %}septiembre
+  {% when '10' %}octubre
+  {% when '11' %}noviembre
+  {% when '12' %}diciembre
+{% endcase %}
+de {{ post.date | date: "%Y" }}</time></p>
 </div>
+<hr>
+{% endfor %}
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+    {% if paginator.previous_page %}
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Nuevos Posts</a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Posts Anteriores &rarr;</a>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}

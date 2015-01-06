@@ -3,6 +3,7 @@ layout: post
 title:  "Maestro detalle en ASP.Net MVC 4"
 date:   2013-04-22 12:46
 categories : posts
+author: "Miguel Román"
 summary: "En este post voy a explicar como poder manejar una estructura de Maestro-Detalle en una aplicación **ASP.Net MVC4** pero sin la necesidad de trabajar con extensiones de **JavaScript** ni nada por el estilo."
 ---
 
