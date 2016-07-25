@@ -8,9 +8,9 @@ summary: "En este post mostraré un poco de código en C# para firmar digitalmen
 
 # Firmado digital de documentos PDF en C# con certificados SSL
 
-Hace unos días mi hermana me consultaba al respecto de verificar si un reporte fué efectivamente generado por el sistema y si el contenido de este se encuentra inalterado. Hasta el momento creo que la mejor forma de hacerlo, sin necesidad de almacenar una copia del documento para compararlas en el futuro, es firmando digitalmente el documento.
+Hace unos días mi hermana me consultaba al respecto de verificar si un reporte fue efectivamente generado por el sistema y si el contenido de este se encuentra inalterado. Hasta el momento creo que la mejor forma de hacerlo, sin necesidad de almacenar una copia del documento para compararlas en el futuro, es firmando digitalmente el documento.
 
-En muchos casos se podría simplemente generar un HASH (con [sal][salt-wikipedia]) del documento e incrustárselo como metadata al documento; sin embargo, creo que la firma digital está hecha específicamente para el escenario que mencioné anteriormente (principalmente porque al tener un HASH la verificacion de la validéz del documento podrá hacerse únicamente por el mismo sistema que generó el documento, pero con la forma electrónica la verificación de identidad y de integridad del documento la podrán hacer los usuarios utilizando el lector de documentos PDF).
+En muchos casos se podría simplemente generar un HASH (con [sal][salt-wikipedia]) del documento e incrustárselo como metadata al documento; sin embargo, creo que la firma digital está hecha específicamente para el escenario que mencioné anteriormente (principalmente porque al tener un HASH la verificacion de la validez del documento podrá hacerse únicamente por el mismo sistema que generó el documento, pero con la forma electrónica la verificación de identidad y de integridad del documento la podrán hacer los usuarios utilizando el lector de documentos PDF).
 
 [salt-wikipedia]: https://es.wikipedia.org/wiki/Sal_(criptograf%C3%ADa)
 
@@ -18,15 +18,15 @@ En muchos casos se podría simplemente generar un HASH (con [sal][salt-wikipedia
 
 La firma electrónica, como dice wikipedia, es un concepto jurídico que busca darle validez legal a un documento electrónico. Mientras que la firma digital es la técnica o método criptográfico que se implementa para garantizar la vigencia e integridad de un documento; estos algoritmos generalmente se basan en la aplicación de una función HASH al documento y luego aplicar un algoritmo de firma que puede estar basado en llaves privadas y públicas.
 
-Este post está basado en la aplicación de firma digital de un documento, pero aplica facilmente para procesos de firma electrónica (si se cuenta con los certificados autorizados en cada país). 
+Este post está basado en la aplicación de firma digital de un documento, pero aplica fácilmente para procesos de firma electrónica (si se cuenta con los certificados autorizados en cada país).
 
-Por ejemplo en Guatemala existe una entidad encargada llamada [Registro de Prestadores de Servicios de Certificación](https://www.rpsc.gob.gt/) bajo la administración del Ministerio de Economía; en este registro se encuentran todos aquellos proveedores que están autorizados a emitir certificados que tengan validéz legal; sin embargo los métodos mencionados en este post son igualmente válidos con los certificados emitidos por estas entidades.
+Por ejemplo en Guatemala existe una entidad encargada llamada [Registro de Prestadores de Servicios de Certificación](https://www.rpsc.gob.gt/) bajo la administración del Ministerio de Economía; en este registro se encuentran todos aquellos proveedores que están autorizados a emitir certificados que tengan validez legal; sin embargo los métodos mencionados en este post son igualmente válidos con los certificados emitidos por estas entidades.
 
 ## Que certificados obtener para firmar documentos
 
-Comunmente para que una persona o un sistema puedan realizar la firma de documentos deberán de adquirir un certificado para estos propósitos, lo más estándar es que se adquiera un certificado con token (que son dispositivos generalmente USB en los que se encuentra almacenado el certificado). Pero tambien es posible firmar documentos con certificados SSL (Si! los mismos que utilizamos para "asegurar" las conexiones de nuestros sitios o aplicaciones web).
+Comunmente para que una persona o un sistema puedan realizar la firma de documentos deberán de adquirir un certificado para estos propósitos, lo más estándar es que se adquiera un certificado con token (que son dispositivos generalmente USB en los que se encuentra almacenado el certificado). Pero también es posible firmar documentos con certificados SSL (Si! los mismos que utilizamos para "asegurar" las conexiones de nuestros sitios o aplicaciones web).
 
-Para este ejemplo utilizaré un certificado autofirmado (esto quiere decir que lo emitiré desde mi computadora y no pagaré para adquirirlo) la desventaja de estos es que cuando se abra un documento firmado con este certificado el lector dirá que no confia en el emisor del certificado; para que un certificado lo muestre como válido el lector de PDFs, el certificado debe ser emitido por cualquiera de las entidades que see ncuentran en el [listado de centro de confianza de Adobe](https://helpx.adobe.com/acrobat/kb/approved-trust-list1.html).
+Para este ejemplo utilizaré un certificado autofirmado (esto quiere decir que lo emitiré desde mi computadora y no pagaré para adquirirlo) la desventaja de estos es que cuando se abra un documento firmado con este certificado el lector dirá que no confía en el emisor del certificado; para que un certificado lo muestre como válido el lector de PDFs, el certificado debe ser emitido por cualquiera de las entidades que se encuentran en el [listado de centro de confianza de Adobe](https://helpx.adobe.com/acrobat/kb/approved-trust-list1.html).
 
 ### Generar certificado autofirmado
 
@@ -88,7 +88,7 @@ namespace FirmaElectronica
         }
     }
 }
-``` 
+```
 
 Ahora bien, la implementación para el proceso de verificación (siempre utilizando la librería [iTextSharp](https://www.nuget.org/packages/iTextSharp/)) podría ser como el siguiente:
 
@@ -160,7 +160,7 @@ namespace FirmaElectronica
         }
     }
 }
-``` 
+```
 
 Por último, como podrán notar, ambas clases dependen de `Certificado` que es una clase que permite extraer el certificado y la llave privada del archivo .pfx que se generó al principio, la implmentación de esta clase puede quedar algo así:
 
