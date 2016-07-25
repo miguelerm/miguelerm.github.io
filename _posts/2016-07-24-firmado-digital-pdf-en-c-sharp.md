@@ -128,10 +128,12 @@ namespace FirmaElectronica
         private bool ValidarFirma(AcroFields campos, string nombre)
         {
             // Solo se verificará la última revision del documento.
+            
             if (campos.GetRevision(nombre) != campos.TotalRevisions)
                 return false;
 
             // Solo se verificará si la firma es de todo el documento.
+            
             if (!campos.SignatureCoversWholeDocument(nombre))
                 return false;
 
@@ -145,7 +147,8 @@ namespace FirmaElectronica
                 foreach (var certificadoDeConfianza in certificado.Chain) {
                     try {
                         certificadoDocumento.Verify(certificadoDeConfianza.GetPublicKey());
-                        // Si llega hasta aquí, es porque la última firma fue realizada con el certificado del sistema.
+                        // Si llega hasta aquí, es porque la última firma fue realizada 
+                        // con el certificado del sistema.
                         return true;
                     } catch (InvalidKeyException) {
                         continue;
