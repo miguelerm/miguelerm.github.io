@@ -3,6 +3,7 @@ layout: post
 title: "Firmado digital de documentos PDF en C# con certificados SSL"
 date: 2016-07-24 17:28
 categories: posts
+author: "Miguel Román"
 summary: "En este post mostraré un poco de código en C# para firmar digitalmente documentos PDF con certificados SSL."
 ---
 
