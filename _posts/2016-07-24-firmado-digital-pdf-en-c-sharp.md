@@ -147,8 +147,10 @@ namespace FirmaElectronica
                 foreach (var certificadoDeConfianza in certificado.Chain) {
                     try {
                         certificadoDocumento.Verify(certificadoDeConfianza.GetPublicKey());
-                        // Si llega hasta aquí, es porque la última firma fue realizada 
+                        // Si llega hasta aquí, es porque la última firma fue realizada
+
                         // con el certificado del sistema.
+                        
                         return true;
                     } catch (InvalidKeyException) {
                         continue;
