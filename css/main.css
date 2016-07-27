@@ -845,3 +845,6 @@ pre {
     color: #f92672; }
   .highlight .gi {
     color: #a6e22e; }
+
+.language-shell.highlighter-rouge > pre.highlight > code {
+  color: #f8f8f2; }

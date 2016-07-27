@@ -105,3 +105,11 @@
   .gd { color: #f92672; } /* Generic.Deleted & Diff Deleted */
   .gi { color: #a6e22e; } /* Generic.Inserted & Diff Inserted */
 }
+
+.language-shell.highlighter-rouge {
+  > pre.highlight {
+    > code {
+      color: #f8f8f2
+    }
+  }
+}

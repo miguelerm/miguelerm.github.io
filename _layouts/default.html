@@ -4,7 +4,7 @@ layout: compress
 <!DOCTYPE html>
 <html lang="es-gt">
   {% include head.html %}
-  <body class="{{ page.slug }}">
+  <body class="{{ page.layout }} {{ page.slug }}">
     <main class="main">
       {% include header.html %}
       {{ content }}
