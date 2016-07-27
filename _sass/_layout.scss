@@ -238,10 +238,6 @@
   @extend %clearfix;
   margin-bottom: 15px;
 
-  li:first-child {
-    margin-right: 5px;
-  }
-
   ul {
     margin: 0;
     padding: 0;
@@ -286,6 +282,10 @@
   a:hover i.fa-twitter {
     background-color: #00ABEC;
     color: #fff;
+  }
+  a:hover i.fa-github {
+    background-color: #fff;
+    color: #000;
   }
 }
 

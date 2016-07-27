@@ -547,8 +547,6 @@ pre {
 
 .social-icons {
   margin-bottom: 15px; }
-  .social-icons li:first-child {
-    margin-right: 5px; }
   .social-icons ul {
     margin: 0;
     padding: 0; }
@@ -584,6 +582,9 @@ pre {
   .social-icons a:hover i.fa-twitter {
     background-color: #00ABEC;
     color: #fff; }
+  .social-icons a:hover i.fa-github {
+    background-color: #fff;
+    color: #000; }
 
 .pagination {
   display: inline-block;

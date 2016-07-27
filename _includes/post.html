@@ -8,7 +8,7 @@
   </header>
     <div class="post-content">
         {% if post.summary %}
-            {{ post.summary }} <a href="{{ post.url | prepend: site.baseurl }}" class="readmore">m&aacute;s &raquo;</a>
+            {{ post.summary | markdownify }} <a href="{{ post.url | prepend: site.baseurl }}" class="readmore">m&aacute;s &raquo;</a>
         {% else %}
             {% if post.excerpt %}
                 {{ post.excerpt }} <a href="{{ post.url | prepend: site.baseurl }}" class="readmore">m&aacute;s &raquo;</a>
