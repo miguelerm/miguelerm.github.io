@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+<nav class="navbar navbar-default navbar-custom">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -15,10 +15,19 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{{ site.baseurl }}/">Inicio</a>
+                </li>
                 {% for page in site.pages %}{% if page.title %}
+                {% if page.url == '/about/' %}
+                <li>
+                    <a href="{{ page.url | prepend: site.baseurl }}" title="{{ page.title }}">Acerca de mi</a>
+                </li>
+                {% else %}{% if page.url != '/404.html' %}
                 <li>
                     <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
                 </li>
+				{% endif %}{% endif %}
                 {% endif %}{% endfor %}
             </ul>
         </div>
@@ -26,3 +35,4 @@
     </div>
     <!-- /.container -->
 </nav>
+                    

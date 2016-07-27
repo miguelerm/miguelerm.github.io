@@ -1,54 +1,13 @@
 ---
-layout: page
-title: Blog de Mike
-description: Otro blog con artículos acerca de desarrollo web
+layout: default
+title: Home
+slug: home
 ---
 
-{% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">{{ post.title }}</h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-        {% endif %}
+<div class="post-list">
+  {% for post in paginator.posts %}
+    {% include post.html %}
+  {% endfor %}
 
-    </a>
-    {% if post.summary %}
-    <p class="post-summary">{{ post.summary | markdownify }}</p>
-    {% endif %}
-    <p class="post-meta">Publicado por {{ post.author }} el <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d" }} de 
-{% assign m = post.date | date: "%-m" %}
-{% case m %}
-  {% when '1' %}enero
-  {% when '2' %}febrero
-  {% when '3' %}marzo
-  {% when '4' %}abril
-  {% when '5' %}mayo
-  {% when '6' %}junio
-  {% when '7' %}julio
-  {% when '8' %}agosto
-  {% when '9' %}septiembre
-  {% when '10' %}octubre
-  {% when '11' %}noviembre
-  {% when '12' %}diciembre
-{% endcase %}
-de {{ post.date | date: "%Y" }}</time></p>
+  {% include pagination.html %}
 </div>
-<hr>
-{% endfor %}
-
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Nuevos Posts</a>
-    </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Posts Anteriores &rarr;</a>
-    </li>
-    {% endif %}
-</ul>
-{% endif %}

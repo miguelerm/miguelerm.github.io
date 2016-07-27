@@ -3,24 +3,32 @@ title: Mike's Bog
 name: Mike's Blog
 header-img: img/home-bg.jpg
 email: miguelerm@gmail.com
+copyright_name: Mike
 description: "Blog con artículos de programación web en .Net C# y JavaScript principalmente, posiblemente tambien algo de SQL"
 baseurl: ""
 url: "http://miguelerm.github.io"
-twitter_username: miguelerm
-github_username:  miguelerm
-facebook_username:  miguelerm
-googleplus_userid: 105939516164475271818
-linkedin_username: miguelerm
-youtube_username: miguelerm
+
+author:
+  name     : 'Miguel Román'
+  email    : miguelerm@gmail.com
+  url      : https://plus.google.com/+MiguelEduardoRomanMartinez/about
+  facebook : miguelerm
+  twitter  : miguelerm
+  github   : miguelerm
+
+disqus_shortname: "miguelerm"
+google_analytics: UA-40921433-1
+
+excerpt_separator: <!-- more -->
+
+compress_html:
+  comments: ["<!-- ", " -->"]
 
 # Build settings
-# markdown: kramdown
+markdown: kramdown
 highlighter: rouge
 permalink: pretty
 paginate: 5
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md", 'bootstrap', 'jquery', '*.less', '*.js', '*.log', '*.bat']
-include: ['main-build.min.js']
-
-markdown: redcarpet
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "tables", "with_toc_data"]
+exclude: ["node_modules","Gruntfile.js","package.json","README.md", "gulpfile.js", "css/main.css", "js/miguelerm.js", 'bootstrap', 'jquery', '*.less', '*.js', '*.log', '*.bat']
+  
+gems: [jekyll-paginate, jekyll-feed]

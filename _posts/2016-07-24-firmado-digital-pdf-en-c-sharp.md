@@ -2,11 +2,9 @@
 layout: post
 title:  "Firmado digital de documentos PDF en C# con certificados SSL"
 date:   2016-07-24 17:28
-categories : C#
+categories: posts
 summary: "En este post mostraré un poco de código en C# para firmar digitalmente documentos PDF con certificados SSL."
 ---
-
-# Firmado digital de documentos PDF en C# con certificados SSL
 
 Hace unos días mi hermana me consultaba al respecto de verificar si un reporte fue efectivamente generado por el sistema y si el contenido de este se encuentra inalterado. Hasta el momento creo que la mejor forma de hacerlo, sin necesidad de almacenar una copia del documento para compararlas en el futuro, es firmando digitalmente el documento.
 
@@ -32,15 +30,13 @@ Para este ejemplo utilizaré un certificado autofirmado (esto quiere decir que l
 
 En una computadora con linux se puede generar con la siguiente secuencia de comandos:
 
-```shell
-openssl genrsa -des3 -passout pass:FoevaGWv6TnR3gC0Kc5o -out server.pass.key 2048
-openssl rsa -passin pass:FoevaGWv6TnR3gC0Kc5o -in server.pass.key -out server.key
-openssl req -new -key server.key -out server.csr
-openssl x509 -req -sha256 -days 1024 -in server.csr -signkey server.key -out server.crt
-openssl pkcs12 -export -in server.crt -inkey server.key -out certificado.pfx
-rm server.pass.key
-rm server.csr
-```
+    openssl genrsa -des3 -passout pass:FoevaGWv6TnR3gC0Kc5o -out server.pass.key 2048
+    openssl rsa -passin pass:FoevaGWv6TnR3gC0Kc5o -in server.pass.key -out server.key
+    openssl req -new -key server.key -out server.csr
+    openssl x509 -req -sha256 -days 1024 -in server.csr -signkey server.key -out server.crt
+    openssl pkcs12 -export -in server.crt -inkey server.key -out certificado.pfx
+    rm server.pass.key
+    rm server.csr
 
 En una computadora con windows se puede generar utilizando el IIS tal y como lo mencionan aquí: [Create and export a self-signed certificate][selfsignedcert-iis].
 

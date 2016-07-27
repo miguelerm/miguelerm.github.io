@@ -1,22 +1,33 @@
 {
-  "name": "miguelerm.github.io",
-  "description": "Blog de Mike",
+  "name": "miguelerm",
   "version": "1.0.0",
-  "homepage": "http://miguelerm.github.io",
-  "author": "Miguel Román",
+  "description": "Mike's Blog",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/miguelerm/miguelerm.github.io.git"
+    "url": "git+https://github.com/miguelerm/miguelerm.github.io.git"
   },
+  "keywords": [
+    "blog"
+  ],
+  "author": "Miguel Román <miguelerm@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miguelerm/miguelerm.github.io/issues"
+  },
+  "homepage": "https://github.com/miguelerm/miguelerm.github.io#readme",
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-concat": "^0.3.0",
-    "grunt-contrib-connect": "^0.5.0",
-    "grunt-contrib-jshint": "^0.6.5",
-    "grunt-contrib-less": "^0.8.3",
-    "grunt-contrib-nodeunit": "^0.2.2",
-    "grunt-contrib-uglify": "^0.2.7",
-    "grunt-jekyll": "~0.4.0"
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-cssnano": "^2.1.1",
+    "gulp-less": "^3.0.5",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-uglify": "^1.5.3",
+    "gulp-watch": "^4.3.5"
   }
 }
