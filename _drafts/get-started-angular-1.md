@@ -1,3 +1,7 @@
+# Iniciando con Angular 1.x
+
+> Para facilitar el desarrollo y pruebas dentro de un servidor web utilizaremos [Node](https://nodejs.org/en/) como herramienta de apoyo en tiempo de desarrollo (por lo que asumo que ya está instalado en sus equipos). 
+
 Crear una carpeta para nuestro proyecto e inicializarla como un proyecto de node.
 
 ```sh
