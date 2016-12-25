@@ -4,7 +4,8 @@
   "description": "Mike's Blog",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp",
+    "start": "bundle exec jekyll serve"
   },
   "repository": {
     "type": "git",

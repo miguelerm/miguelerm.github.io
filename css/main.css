@@ -638,7 +638,8 @@ pre {
 * Syntax highlighting styles
 */
 .highlight {
-  padding: 0;
+  padding: 5px;
+  overflow-x: auto;
   margin-top: 10px;
   margin-bottom: 25px;
   /* Comment */
@@ -711,18 +712,20 @@ pre {
     padding: 15px 20px;
     white-space: pre;
     line-height: 23px;
-    overflow-x: auto;
     font-size: .8em;
     word-break: inherit;
     word-wrap: inherit; }
-    .highlight pre, .highlight pre code {
+    .highlight pre, .highlight pre pre, .highlight pre code {
       color: #eeffdd; }
     .highlight pre code {
       white-space: pre; }
       .highlight pre code * {
         white-space: nowrap; }
   .highlight code {
+    color: #eeffdd;
     background-color: transparent; }
+  .highlight .hll {
+    background-color: #49483e; }
   .highlight .c {
     color: #75715e; }
   .highlight .err {
@@ -847,7 +850,8 @@ pre {
   .highlight .gi {
     color: #a6e22e; }
 
-.language-shell.highlighter-rouge > pre.highlight > code {
+.language-shell.highlighter-rouge > pre.highlight > code,
+.language-sh.highlighter-rouge > pre.highlight > code {
   color: #f8f8f2; }
 
 table {

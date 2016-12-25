@@ -1,4 +1,12 @@
-# Iniciando con Angular 1.x
+---
+layout: post
+title: "Iniciando con Angular 1.x"
+date: 2016-12-24 13:21
+categories: posts
+author: "Miguel Román"
+summary: "Pasos mínimos para iniciar un projecto de Angular 1.x con ayuda de Node."
+image: 2016/12/visual-studio-code.png
+---
 
 Existen muchas formas de iniciar con [Angular 1.x](https://angularjs.org/),
 podemos empezar creando codigos de ejemplo en
@@ -33,7 +41,7 @@ un contenido similar a este:
   "version": "1.0.0",
   "description": "Aplicacion de ejemplo de angular",
   "author": "Miguel Roman <miguelerm@gmail.com>",
-  "license": "ISC",
+  "license": "ISC"
 }
 ```
 
@@ -94,7 +102,9 @@ siguiente contenido:
 ```
 
 Luego en el mismo editor agregamos los `scripts` en el `package.json`, scripts
-que nos serviran para probar la aplicación:
+que nos serviran para probar la aplicación, el script relevante aquí es el `start`
+ya que este ejecutará `lite-server` y con este ya podemos probar nuestra
+aplicación publicada en un servidor web:
 
 ```json
 {
@@ -102,8 +112,7 @@ que nos serviran para probar la aplicación:
   "version": "1.0.0",
   "description": "Aplicacion de ejemplo de angular",
   "scripts": {
-    "start": "lite-server",
-    "lite-server": "lite-server"
+    "start": "lite-server"
   },
   "author": "Miguel Roman <miguelerm@gmail.com>",
   "license": "ISC",
@@ -123,4 +132,12 @@ apuntando hacia nuestra mini-aplicación angular.
 npm start
 ```
 
-Saludos, Mike
+![My helpful screenshot](/img/2016/12/angular-quick-start.png)
+
+Este es un ejemplo bastante sencillo, pero lo suficientemente practico para que
+aquellos que no han trabajado con angular puedan empezar a experimentar con este
+gran producto.
+
+Saludos,
+
+Mike.
