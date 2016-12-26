@@ -98,6 +98,8 @@ Incluímos el archivo `todo.controller.js` en el `index.html` y modificamos el `
 
 Y eso es todo, tenemos una pequeña aplicación con un sencillo controlador para agregar tareas, completarlas y eliminarlas (todo en memoria).
 
+Si estamos trabajando sobre el mismo proyecto que creamos en nuestro [post anterior]({% post_url 2016-12-24-iniciando-con-angular-1 %}) ejecutamos `npm start` y podremos probar la aplicación.
+
 ![Ejemplo de la aplicación](/img/2016/12/ng-todo-app.png)
 
 Espero que esto les de una idea mas clara de como trabajar con angular y separar el funcionamiento en controller, posteriormente veremos como administrar las rutas de la aplicación, agrupar componentes de nuestra aplicación (como el menú, el header, el footer, etc.), encapsular lógica en servicios, etc.
