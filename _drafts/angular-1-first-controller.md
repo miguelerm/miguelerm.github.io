@@ -34,22 +34,30 @@ Ahora ya podemos crear un controller, creamos el archivo `todo.controller.js` co
 angular.module('angular-demo').controller('TodoController', TodoController);
 
 function TodoController() {
-   var ctrl = this;
-   
-   ctrl.tarea = '';
-   ctrl.tareas = [];
-   ctrl.agregar = agregar;
-   ctrl.completar = completar;
-   ctrl.eliminar = eliminar;
-   
-   function agregar() {
-   }
-   
-   function completar(tarea) {
-   }
-   
-   function eliminar(eliminar) {
-   }
+  var ctrl = this;
+
+  ctrl.tarea = '';
+  ctrl.tareas = [];
+  ctrl.agregar = agregar;
+  ctrl.completar = completar;
+  ctrl.eliminar = eliminar;
+
+  function agregar() {
+    var nombre = ctrl.tarea;
+    ctrl.tareas.push({
+      nombre: nombre
+    });
+    ctrl.tarea = '';
+  }
+
+  function completar(item) {
+    item.completada = !item.completada;
+  }
+
+  function eliminar(item) {
+    var index = ctrl.tareas.indexOf(item);
+    ctrl.tareas.splice(index, 1);
+  }
 }
 ```
 
@@ -64,18 +72,36 @@ Incluímos el archivo `todo.controller.js` en el `index.html` y modificamos el `
     <script src="/node_modules/angular/angular.js"></script>
     <script src="/app.js"></script>
     <script src="/todo.controller.js"></script>
+    <style type="text/css">
+    .done {
+      text-decoration: line-through;
+    }
+    </style>
   </head>
   <body>
     <div ng-controller="TodoController as vm">
       <label>Nueva Tarea:</label>
       <input type="text" ng-model="vm.tarea" placeholder="Ingresa el nombre de la tarea">
+      <button type="button" ng-click="vm.agregar()" ng-disabled="!vm.tarea">Agregar</button>
       <hr>
       <ul>
-        <li ng-repeat="item in vm.tareas">
-          <span>item.nombre</span>
+        <li ng-repeat="item in vm.tareas" ng-class="{ done: item.completada }">
+          <span style="display:block">{{ ::item.nombre }}</span>
+          - <a href="#" ng-click="vm.completar(item)">[completar]</a>
+          - <a href="#" ng-click="vm.eliminar(item)">[eliminar]</a>
         </li>
       </ul>
     </div>
   </body>
 </html>
 ```
+
+Y eso es todo, tenemos una pequeña aplicación con un sencillo controlador para agregar tareas, completarlas y eliminarlas (todo en memoria).
+
+![Ejemplo de la aplicación](/img/2016/12/ng-todo-app.png)
+
+Espero que esto les de una idea mas clara de como trabajar con angular y separar el funcionamiento en controller, posteriormente veremos como administrar las rutas de la aplicación, agrupar componentes de nuestra aplicación (como el menú, el header, el footer, etc.), encapsular lógica en servicios, etc.
+
+Hasta la próxima,
+
+Mike.
